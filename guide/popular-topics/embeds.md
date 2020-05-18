@@ -78,7 +78,9 @@ const exampleEmbed = new Discord.RichEmbed()
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-channel.send(exampleEmbed);
+message.channel.send(exampleEmbed);
+  }
+});
 ```
 
 </branch>
@@ -88,6 +90,13 @@ channel.send(exampleEmbed);
 // at the top of your file
 const Discord = require('discord.js');
 
+//You can put bot.on, or 
+//client.on('message', message => { 
+//if (message.content === '!help') {
+
+//THIS IS THE EMBED:
+bot.on('message', message=>{
+    if(message.content === PREFIX + 'help'){
 // inside a command, event listener, etc.
 const exampleEmbed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
@@ -107,7 +116,10 @@ const exampleEmbed = new Discord.MessageEmbed()
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-channel.send(exampleEmbed);
+message.channel.send(exampleEmbed);
+
+  }
+});
 ```
 
 </branch>
@@ -177,7 +189,9 @@ const exampleEmbed = new Discord.RichEmbed()
 	.attachFiles(['../assets/discordjs.png'])
 	.setImage('attachment://discordjs.png');
 
-channel.send(exampleEmbed);
+message.channel.send(exampleEmbed);
+  }
+});
 ```
 
 </branch>
@@ -252,7 +266,9 @@ const exampleEmbed = {
 	},
 };
 
-channel.send({ embed: exampleEmbed });
+message.channel.send({ embed: exampleEmbed });
+  }
+});
 ```
 
 ::: tip
@@ -299,7 +315,9 @@ const exampleEmbed = {
 	},
 };
 
-channel.send({ files: [file], embed: exampleEmbed });
+message.channel.send({ files: [file], embed: exampleEmbed });
+  }
+});
 ```
 
 </branch>
@@ -315,7 +333,9 @@ const exampleEmbed = {
 	},
 };
 
-channel.send({ files: [file], embed: exampleEmbed });
+message.channel.send({ files: [file], embed: exampleEmbed });
+  }
+});
 ```
 
 </branch>
@@ -342,7 +362,9 @@ To forward a received embed you retrieve it from the messages embed array (`mess
 const receivedEmbed = message.embeds[0];
 const exampleEmbed = new Discord.RichEmbed(receivedEmbed).setTitle('New title');
 
-channel.send(exampleEmbed);
+message.channel.send(exampleEmbed);
+  }
+});
 ```
 
 </branch>
@@ -352,7 +374,9 @@ channel.send(exampleEmbed);
 const receivedEmbed = message.embeds[0];
 const exampleEmbed = new Discord.MessageEmbed(receivedEmbed).setTitle('New title');
 
-channel.send(exampleEmbed);
+message.channel.send(exampleEmbed);
+  }
+});
 ```
 
 </branch>
